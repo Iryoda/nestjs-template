@@ -4,7 +4,7 @@
   "description": "A template for nestjs projects based on Rocketseat architecture",
   "author": "Augusto Iryoda",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "prebuild": "rimraf dist",

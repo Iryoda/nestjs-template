@@ -12,5 +12,4 @@ import { JwtAuthGuard } from './shared/guards/auth/jwt-auth.guard';
     { provide: APP_GUARD, useClass: JwtAuthGuard },
   ],
 })
-
 export class AppModule {}

@@ -11,7 +11,7 @@ import { CreateUserDTO } from '../dtos/createUserDTO';
 import { Public } from 'src/shared/decorators/public.decorator';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 
-@ApiTags('user')
+@ApiTags('User')
 @Controller()
 export class CreateUserController {
   constructor(private createUserService: CreateUserUseCase) {}

@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_PASSWORD: 'docker'
       POSTGRES_USERNAME: 'postgres'
-      POSTGRES_DB: 'proposal'
+      POSTGRES_DB: 'nest-template'
     ports:
       - '5432:5432'
   # app:

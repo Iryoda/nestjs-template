@@ -19,7 +19,7 @@ What is included?
 ## 🧿 How to use
 First you will need a docker postgresql database, for make it easer use `docker-compose` to run the `docker-compose.yml` file that will up a docker container with the already configured db
 
-The default configurations is 
+The default configurations is:
 ```yml
   database:
     image: postgres
@@ -30,7 +30,7 @@ The default configurations is
     ports:
       - '5432:5432'
 ```
-On the project root you can run
+On the project root you can run:
 
 ```shell
 
@@ -38,7 +38,7 @@ docker-compose up -d
 
 ``` 
 
-With the container up you can run the prisma command to migrate your database
+With the container up you can run the prisma command to migrate your database:
 
 ```shell
 yarn prisma migrate dev
@@ -69,7 +69,7 @@ yarn start
 
 ### 📕 Customizing
 
-If you whant to change the db name you should alter the postgresql url on `.env` and apply the same change to the `docker-compose.yml`
+If you whant to change the db name you should alter the postgresql url on `.env` and apply the same changes to the `docker-compose.yml`
 
 ```env
 # .env file

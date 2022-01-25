@@ -94,4 +94,8 @@ DATABASE_URL="postgresql://postgres:docker@localhost:5432/dogDB?schema=public"
 This template has others configurations that use the main branch as base, to access it just go for the branch that implements what you need and use as template when creating your repository or clone it.
 
 - User with clean architecture: `feat/user`
-- User with nestj simple architecture: `feat/user-simple`
+- User with nestj without clean-architecture: `feat/user-simple`
+
+
+## 📋 TODOs
+- Add mailer implementations to user branch

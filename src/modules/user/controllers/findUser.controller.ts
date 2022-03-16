@@ -6,20 +6,21 @@ import {
   ParseUUIDPipe,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { User } from '../domain/User';
-import { FindUserUseCase } from '../useCases/findUserUseCase.service';
 
+import { FindUserService } from '../services/findUserUseService.service';
+
+@UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('User')
 @Controller()
 export class FindUserController {
-  constructor(private findUserUseCase: FindUserUseCase) {}
+  constructor(private findUserService: FindUserService) {}
 
-  @UseInterceptors(ClassSerializerInterceptor)
-  @ApiResponse({ type: User })
-  @Get('users/:id')
+  @ApiOkResponse({ description: 'Return a user', type: User })
+  @Get('user/:id')
   async byId(@Param('id', ParseUUIDPipe) id: string) {
-    const user = await this.findUserUseCase.byId(id);
+    const user = await this.findUserService.byId(id);
 
     return new User(user);
   }

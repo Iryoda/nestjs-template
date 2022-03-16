@@ -6,7 +6,7 @@ import { AuthController } from '../controllers/authController.controller';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
 import { JwtStrategy } from '../strategies/jwt.strategy';
 import { LocalStrategy } from '../strategies/passportLocal.strategy';
-import { AuthUseCase } from '../useCases/authUseCase.service';
+import { AuthService } from '../useCases/authService.service';
 import auth from 'src/config/auth';
 
 const { secret, expiresIn } = auth;
@@ -22,7 +22,7 @@ const { secret, expiresIn } = auth;
     JwtModule.register({ secret, signOptions: { expiresIn } }),
   ],
   controllers: [AuthController],
-  providers: [AuthUseCase, LocalStrategy, JwtStrategy, HashProvider],
-  exports: [AuthUseCase],
+  providers: [AuthService, LocalStrategy, JwtStrategy, HashProvider],
+  exports: [AuthService],
 })
-export class AuthModule{}
+export class AuthModule {}

@@ -2,12 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { AlreadyExistError } from 'src/shared/errors/alreadyExist';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
 import { CreateUserDTO } from '../dtos/createUserDTO';
-import { UserRepository } from '../repositories/userRepository';
+
+import { IUserRepository } from '../repositories/IUserRepository';
 
 @Injectable()
-export class CreateUserUseCase {
+export class CreateUserService {
   constructor(
-    private userRepository: UserRepository,
+    private userRepository: IUserRepository,
     private hashProvider: HashProvider,
   ) {}
 

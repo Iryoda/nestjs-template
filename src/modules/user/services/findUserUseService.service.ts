@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { NotFoundError } from 'src/shared/errors/notFound';
-import { UserRepository } from '../repositories/userRepository';
+
+import { IUserRepository } from '../repositories/IUserRepository';
 
 @Injectable()
-export class FindUserUseCase {
-  constructor(private userRepository: UserRepository) {}
+export class FindUserService {
+  constructor(private userRepository: IUserRepository) {}
 
   async byId(id: string) {
     const user = await this.userRepository.findById(id);

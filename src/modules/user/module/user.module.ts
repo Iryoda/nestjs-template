@@ -1,30 +1,34 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
+
 import { PrismaService } from 'src/shared/prisma/prisma.service';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
+
 import { CreateUserController } from '../controllers/createUser.controller';
 import { FindUserController } from '../controllers/findUser.controller';
-import { UpdateUserController } from '../controllers/updateUserUseCase.controller';
+import { UpdateUserController } from '../controllers/updateUser.controller';
+
 import { UserRepository } from '../repositories/userRepository';
-import { CreateUserUseCase } from '../useCases/createUserUseCase.service';
-import { FindUserUseCase } from '../useCases/findUserUseCase.service';
-import { UpdateUserUseCase } from '../useCases/updateUserUseCase.service';
+
+import { JwtAuthGuard } from 'src/shared/guards/auth/jwt-auth.guard';
+import { CreateUserService } from '../services/createUserService.service';
+import { UpdateUserService } from '../services/updateUserService.service';
+import { FindUserService } from '../services/findUserUseService.service';
+
+import { IUserRepository } from '../repositories/IUserRepository';
 
 @Module({
   imports: [],
   controllers: [CreateUserController, UpdateUserController, FindUserController],
   providers: [
-    CreateUserUseCase,
-    UpdateUserUseCase,
-    FindUserUseCase,
-    UserRepository,
+    CreateUserService,
+    UpdateUserService,
+    FindUserService,
     PrismaService,
     HashProvider,
+    { provide: IUserRepository, useClass: UserRepository },
+    { provide: APP_GUARD, useClass: JwtAuthGuard },
   ],
-  exports: [
-    CreateUserUseCase,
-    UpdateUserUseCase,
-    FindUserUseCase,
-    UserRepository,
-  ],
+  exports: [CreateUserService, UpdateUserService, FindUserService],
 })
 export class UserModule {}

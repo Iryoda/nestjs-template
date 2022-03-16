@@ -2,14 +2,14 @@ import { Prisma } from '@prisma/client';
 import { User } from '../domain/User';
 import { UpdateUserDTO } from '../dtos/updateUserDTO';
 
-export interface IUserRepository {
-  create(data: Prisma.UserCreateInput): Promise<User>;
+export abstract class IUserRepository {
+  abstract create(data: Prisma.UserCreateInput): Promise<User>;
 
-  update(id: string, data: UpdateUserDTO): Promise<User>;
+  abstract update(id: string, data: UpdateUserDTO): Promise<User>;
 
-  delete(id: string): Promise<void>;
+  abstract delete(id: string): Promise<void>;
 
-  findById(id: string): Promise<User>;
-  findByEmail(email: string): Promise<User>;
-  findAll(): Promise<User[]>;
+  abstract findById(id: string): Promise<User>;
+  abstract findByEmail(email: string): Promise<User>;
+  abstract findAll(): Promise<User[]>;
 }

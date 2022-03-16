@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
 import { User } from '@prisma/client';
-import { FindUserUseCase } from 'src/modules/user/useCases/findUserUseCase.service';
+
+import { JwtService } from '@nestjs/jwt';
+import { FindUserService } from 'src/modules/user/services/findUserUseService.service';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
 
 @Injectable()
-export class AuthUseCase {
+export class AuthService {
   constructor(
-    private readonly findUserUseCase: FindUserUseCase,
+    private readonly findUserService: FindUserService,
     private readonly jwtService: JwtService,
     private readonly hashProvider: HashProvider,
   ) {}
@@ -24,7 +25,7 @@ export class AuthUseCase {
     password: string,
   ): Promise<Partial<User> | null> {
     try {
-      const user = await this.findUserUseCase.byEmail(email);
+      const user = await this.findUserService.byEmail(email);
 
       const validatePassword = await this.validatePassword(
         password,

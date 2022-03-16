@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { UpdateUserDTO } from '../dtos/updateUserDTO';
-import { UserRepository } from '../repositories/userRepository';
+
+import { IUserRepository } from '../repositories/IUserRepository';
 
 @Injectable()
-export class UpdateUserUseCase {
-  constructor(private userRepository: UserRepository) {}
+export class UpdateUserService {
+  constructor(private userRepository: IUserRepository) {}
 
   async handle(id: string, data: UpdateUserDTO) {
     const user = await this.userRepository.update(id, data);

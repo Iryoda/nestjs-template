@@ -4,12 +4,12 @@ import { Public } from 'src/shared/decorators/public.decorator';
 import { LocalAuthGuard } from 'src/shared/guards/auth/local-auth.guard';
 import { LogInResponseDTO } from '../dtos/logInResponseDTO';
 import { LogInUserDTO } from '../dtos/logInUserDTO';
-import { AuthUseCase } from '../useCases/authUseCase.service';
+import { AuthService } from '../useCases/authService.service';
 
 @ApiTags('Session')
 @Controller()
 export class AuthController {
-  constructor(private authUseCase: AuthUseCase) {}
+  constructor(private authUseCase: AuthService) {}
 
   @Public()
   @UseGuards(LocalAuthGuard)

@@ -7,15 +7,15 @@ import { LogInUserDTO } from '../dtos/logInUserDTO';
 import { AuthService } from '../useCases/authService.service';
 
 @ApiTags('Session')
+@Public()
 @Controller()
 export class AuthController {
   constructor(private authUseCase: AuthService) {}
 
-  @Public()
   @UseGuards(LocalAuthGuard)
-  @Post('auth/login')
   @ApiBody({ type: LogInUserDTO })
   @ApiResponse({ status: 200, type: LogInResponseDTO })
+  @Post('auth/login')
   async login(@Request() req: any) {
     return await this.authUseCase.login(req.user);
   }

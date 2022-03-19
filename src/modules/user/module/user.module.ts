@@ -8,14 +8,13 @@ import { CreateUserController } from '../controllers/create-user.controller';
 import { FindUserController } from '../controllers/find-user.controller';
 import { UpdateUserController } from '../controllers/update-user.controller';
 
-import { UserRepository } from '../repositories/user-repository.repository';
-
-import { JwtAuthGuard } from 'src/shared/guards/auth/jwt-auth.guard';
 import { CreateUserService } from '../services/create-user.service';
 import { UpdateUserService } from '../services/update-user.service';
 import { FindUserService } from '../services/find-user.service';
+import { JwtAuthGuard } from 'src/shared/guards/auth/jwt-auth.guard';
 
 import { IUserRepository } from '../repositories/IUserRepository';
+import { UserRepository } from '../repositories/user-repository.repository';
 
 @Module({
   imports: [],

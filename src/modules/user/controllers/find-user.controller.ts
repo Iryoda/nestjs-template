@@ -6,11 +6,12 @@ import {
   ParseUUIDPipe,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { User } from '../domain/user.entity';
 
 import { FindUserService } from '../services/find-user.service';
 
+@ApiBearerAuth()
 @UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('User')
 @Controller()

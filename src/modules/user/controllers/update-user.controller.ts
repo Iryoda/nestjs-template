@@ -6,7 +6,8 @@ import {
   Req,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+
+import { ApiBearerAuth, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 import { Request } from 'express';
 
@@ -14,6 +15,7 @@ import { User } from '../domain/user.entity';
 import { UpdateUserDTO } from '../dtos/update-user.dto';
 import { UpdateUserService } from '../services/update-user.service';
 
+@ApiBearerAuth()
 @ApiTags('User')
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller()

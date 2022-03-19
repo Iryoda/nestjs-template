@@ -1,10 +1,10 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
-import { AlreadyExistError } from 'src/shared/errors/alreadyExist';
+import { AlreadyExistError } from 'src/shared/errors/already-exist';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
 
-import { User } from '../domain/User';
-import { CreateUserDTO } from '../dtos/createUserDTO';
+import { User } from '../domain/user.entity';
+import { CreateUserDTO } from '../dtos/create-user.dto';
 
 import { IUserRepository } from '../repositories/IUserRepository';
 

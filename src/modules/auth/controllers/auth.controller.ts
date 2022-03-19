@@ -2,9 +2,9 @@ import { Controller, Post, Request, UseGuards } from '@nestjs/common';
 import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Public } from 'src/shared/decorators/public.decorator';
 import { LocalAuthGuard } from 'src/shared/guards/auth/local-auth.guard';
-import { LogInResponseDTO } from '../dtos/logInResponseDTO';
-import { LogInUserDTO } from '../dtos/logInUserDTO';
-import { AuthService } from '../useCases/authService.service';
+import { LogInResponseDTO } from '../dtos/logIn-response.dto';
+import { LogInUserDTO } from '../dtos/logIn-user.dto';
+import { AuthService } from '../services/auth.service';
 
 @ApiTags('Session')
 @Public()

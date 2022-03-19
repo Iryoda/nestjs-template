@@ -7,9 +7,9 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { User } from '../domain/User';
+import { User } from '../domain/user.entity';
 
-import { FindUserService } from '../services/findUserUseService.service';
+import { FindUserService } from '../services/find-user.service';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('User')

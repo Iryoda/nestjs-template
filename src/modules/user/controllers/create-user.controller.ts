@@ -6,12 +6,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 
-import { User } from '../domain/User';
-import { CreateUserDTO } from '../dtos/createUserDTO';
+import { User } from '../domain/user.entity';
+import { CreateUserDTO } from '../dtos/create-user.dto';
 import { Public } from 'src/shared/decorators/public.decorator';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
 
-import { CreateUserService } from '../services/createUserService.service';
+import { CreateUserService } from '../services/create-user.service';
 
 @ApiTags('User')
 @UseInterceptors(ClassSerializerInterceptor)

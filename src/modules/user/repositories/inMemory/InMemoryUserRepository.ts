@@ -1,7 +1,7 @@
 import { Prisma, User } from '@prisma/client';
 import { IUserRepository } from '../IUserRepository';
+import { UpdateUserDTO } from '../../dtos/update-user.dto';
 import { v4 } from 'uuid';
-import { UpdateUserDTO } from '../../dtos/updateUserDTO';
 
 export class InMemoryUserRepository implements IUserRepository {
   private repo: User[] = [];

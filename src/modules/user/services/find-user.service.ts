@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NotFoundError } from 'src/shared/errors/notFound';
+import { NotFoundError } from 'rxjs';
 
 import { IUserRepository } from '../repositories/IUserRepository';
 

@@ -17,7 +17,7 @@ const { defaults, transport, preview } = mailer;
       defaults,
       preview,
       template: {
-        dir: resolve(__dirname, '..', '..', "..",'template'),
+        dir: resolve(__dirname, '..', '..', '..', 'template'),
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,

@@ -6,7 +6,6 @@ export class User implements PrismaUser {
   @ApiProperty()
   id: string;
 
-
   @ApiProperty()
   email: string;
 

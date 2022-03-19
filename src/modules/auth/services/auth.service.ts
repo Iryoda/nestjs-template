@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { User } from '@prisma/client';
 
 import { JwtService } from '@nestjs/jwt';
-import { FindUserService } from 'src/modules/user/services/findUserUseService.service';
+import { FindUserService } from 'src/modules/user/services/find-user.service';
 import { HashProvider } from 'src/shared/providers/hashProvider/hashProvider.service';
 
 @Injectable()

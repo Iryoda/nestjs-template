@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CreateUserDTO } from 'src/modules/user/dtos/createUserDTO';
+import { CreateUserDTO } from 'src/modules/user/dtos/create-user.dto';
 import { InMemoryUserRepository } from 'src/modules/user/repositories/inMemory/InMemoryUserRepository';
 import { IUserRepository } from 'src/modules/user/repositories/IUserRepository';
-import { FindUserService } from 'src/modules/user/services/findUserUseService.service';
+import { FindUserService } from 'src/modules/user/services/find-user.service';
 
 import { PrismaService } from 'src/shared/prisma/prisma.service';
 

@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
-import { User } from '../domain/User';
-import { UpdateUserDTO } from '../dtos/updateUserDTO';
+import { User } from '../domain/user.entity';
+import { UpdateUserDTO } from '../dtos/update-user.dto';
 
 export abstract class IUserRepository {
   abstract create(data: Prisma.UserCreateInput): Promise<User>;

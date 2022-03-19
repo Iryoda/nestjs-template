@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CreateUserDTO } from 'src/modules/user/dtos/createUserDTO';
+import { CreateUserDTO } from 'src/modules/user/dtos/create-user.dto';
 import { InMemoryUserRepository } from 'src/modules/user/repositories/inMemory/InMemoryUserRepository';
 import { IUserRepository } from 'src/modules/user/repositories/IUserRepository';
-import { UpdateUserService } from 'src/modules/user/services/updateUserService.service';
+import { UpdateUserService } from 'src/modules/user/services/update-user.service';
 
 describe('UpdateUserService', () => {
   let updateUserService: UpdateUserService;

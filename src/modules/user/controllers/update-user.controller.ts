@@ -10,9 +10,9 @@ import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 import { Request } from 'express';
 
-import { User } from '../domain/User';
-import { UpdateUserDTO } from '../dtos/updateUserDTO';
-import { UpdateUserService } from '../services/updateUserService.service';
+import { User } from '../domain/user.entity';
+import { UpdateUserDTO } from '../dtos/update-user.dto';
+import { UpdateUserService } from '../services/update-user.service';
 
 @ApiTags('User')
 @UseInterceptors(ClassSerializerInterceptor)
